@@ -1,3 +1,5 @@
+import { Editor } from "./editor";
+
 interface DocumentIdPageProps {
   params: Promise<{ documentId: string }>; // dynamic APIs are asynchronous
 }
@@ -5,7 +7,11 @@ const DocumentIdPage = async ({ params }: DocumentIdPageProps) => {
   const { documentId } = await params;
 
   // ===============================================
-  return <div className="">{documentId}</div>;
+  return (
+    <div className="min-h-screen bg-[#FAFBFD]">
+      <Editor />
+    </div>
+  );
 };
 
 export default DocumentIdPage;
